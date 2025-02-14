@@ -1,0 +1,54 @@
+users
+-----
+id int pk 
+username str unique
+full_name str
+email str unique
+password str
+bio str
+create_at timestamp
+
+
+posts
+----
+id int pk
+user_id int fk >- USER.id
+caption str 
+create_at timestamp
+
+comments
+-------
+id int pk
+post_id int fk >- POST.id
+user_id int fk >- USER.id
+content str
+create_at timestamp
+
+likes
+-----
+id int pk
+user_id int unique fk >- USER.id
+post_id int unique fk >- POST.id
+
+
+followers
+---------
+id int pk
+follower_id unique int fk >- USER.id 
+following_id unique int fk >- USER.id
+create_at timestamp
+
+messages
+--------
+id int pk
+sender_id int fk >- USER.id
+receiver_id int fk >- USER.id
+content str
+create_at timestamp
+
+stories
+-------
+id int pk
+user_id int fk >- USER.id
+create_at timestamp
+expires_at timestamp 
