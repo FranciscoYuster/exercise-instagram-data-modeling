@@ -1,9 +1,9 @@
 import os
 import sys
-from sqlalchemy import Column, Integer, String, Text, ForeignKey, DateTime, Table
-from sqlalchemy.orm import relationship, declarative_base, backref
-from sqlalchemy import create_engine
-from eralchemy2 import render_er
+from sqlalchemy import Column, Integer, String, Text, ForeignKey, DateTime, Table # type: ignore
+from sqlalchemy.orm import relationship, declarative_base, backref # type: ignore
+from sqlalchemy import create_engine # type: ignore
+from eralchemy2 import render_er # type: ignore
 import datetime
 
 Base = declarative_base()
